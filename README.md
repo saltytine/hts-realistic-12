@@ -1,4 +1,5 @@
 # another lil writeup of hts realistic 12  
+this one was pretty easy  
 
 The lil blurb that tells us what to do  
 ![image](https://github.com/user-attachments/assets/4a1730fe-8292-4807-8c33-1491ae3e5144)
@@ -31,5 +32,27 @@ Whats interesting here is `heartlandadminpanel.html`, which if you stick in the 
 Gives you a very blank screen with a very small login thingie  
 ![image](https://github.com/user-attachments/assets/c35397e5-95ee-4707-ba45-55e45fab5e29)  
 I tried random passwords for a little bit and sql injections but wasn't workin  
-Looked in the page source and found smth interesting though
-![image](https://github.com/user-attachments/assets/9d1535e5-7c23-4754-b51a-4f1c5128e00e)
+Looked in the page source and found smth interesting though  
+![image](https://github.com/user-attachments/assets/cfa8d5c3-e798-4d58-a961-d8ef68329323)  
+Tis sending a get request to `cgi-bin/heartlandadminpanel.pl`  
+Can't get into it directly, so i spent a good chunk of time looking through all the pages  
+Even Mr. Englebert (Humperdink)  
+![image](https://github.com/user-attachments/assets/fa08062c-29e1-4308-bfb5-1b355c20d82b)  
+Then I found Joey Simmons' page, who asked me to sign his "guestook"  
+![image](https://github.com/user-attachments/assets/effbba19-dc6a-42a9-85b8-fcd0803f876a)  
+Which looked pretty exploitable  
+I tried to send a slur but it showed this error :<  
+![image](https://github.com/user-attachments/assets/c92a963f-65c7-4ac2-a885-9d33a7a07f18)  
+Looking at the page source we can see that its writing to some guest file  
+![image](https://github.com/user-attachments/assets/a9a70f84-7f98-4366-a38f-52f26376e461)  
+Given that this may be one of the worst websites ever made, if this thing can write it can probably read  
+If we call the `guest.pl` script with the read function and point it to `heartlandadminpanel.pl` we can (in theory) read what is in `heartlandadminpanel.pl` and (in theory) get the creds for the admin panel in there  
+![image](https://github.com/user-attachments/assets/1a82fb86-3eeb-4cc3-ab43-e8a6ba8caa31)  
+And that takes us to  
+![image](https://github.com/user-attachments/assets/a63ba925-1252-4168-b282-e7ceb45457c9)  
+Wonderfully for us, the user and pass are hardcoded into the source, *twice*  
+![image](https://github.com/user-attachments/assets/49626667-56eb-4495-97f3-0a6ee78ca24d)  
+Stick it in the admin panel:  
+![image](https://github.com/user-attachments/assets/f77a2973-e6c3-4b24-94b4-60d27f8d74c9)  
+And clear all and you are finally done  
+![image](https://github.com/user-attachments/assets/abad4185-f35a-417a-9c9b-629d4378aa5a)  
