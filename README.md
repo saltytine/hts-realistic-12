@@ -54,5 +54,7 @@ Wonderfully for us, the user and pass are hardcoded into the source, *twice*
 ![image](https://github.com/user-attachments/assets/49626667-56eb-4495-97f3-0a6ee78ca24d)  
 Stick it in the admin panel:  
 ![image](https://github.com/user-attachments/assets/f77a2973-e6c3-4b24-94b4-60d27f8d74c9)  
-And clear all and you are finally done  
+Which takes you to a page for managing all restrictions:  
+![image](https://github.com/user-attachments/assets/eceb9acf-98c3-46de-9240-38fa4a4a0a3c)  
+Just clear all and you are done  
 ![image](https://github.com/user-attachments/assets/abad4185-f35a-417a-9c9b-629d4378aa5a)  
